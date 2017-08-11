@@ -4,11 +4,11 @@
     "type": "library",
     "keywords": ["curl", "http"],
     "minimum-stability": "stable",
-    "homepage": "https://github.com/pablosanches/own",
+    "homepage": "https://github.com/pablosanches/owl",
     "license": "MIT",
     "version": "1.0.0",
     "support": {
-        "issues": "https://github.com/pablosanches/own/issues"
+        "issues": "https://github.com/pablosanches/owl/issues"
     },
     "require": {
         "php": ">=5.6"

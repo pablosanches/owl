@@ -1,4 +1,4 @@
-# Owl
+# ![logo](http://i.imgur.com/WC1OoXO.png) Owl
 
 Owl is a simply cURL wrapper for PHP
 

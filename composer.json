@@ -3,7 +3,7 @@
     "description": "Owl is a simply cURL wrapper for PHP",
     "type": "library",
     "keywords": ["curl", "http"],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "homepage": "https://github.com/pablosanches/own",
     "license": "MIT",
     "support": {

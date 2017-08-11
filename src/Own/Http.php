@@ -115,7 +115,7 @@ abstract class Http
      * @param string $value
      * @return Own\Http
      */
-    public function setCurlOptions($option, $value)
+    public function setCurlOption($option, $value)
     {
         curl_setopt($this->ch, $option, $value);
         $this->curl_options[$option] = $value;
@@ -143,8 +143,8 @@ abstract class Http
     {
         // Defaults options
         $this
-            ->setCurlOptions(CURLOPT_RETURNTRANSFER, true)
-            ->setCurlOptions(CURLINFO_HEADER_OUT, true);
+            ->setCurlOption(CURLOPT_RETURNTRANSFER, true)
+            ->setCurlOption(CURLINFO_HEADER_OUT, true);
 
         // Additional headers
         if (!empty($this->options['headers'])) {
@@ -157,29 +157,29 @@ abstract class Http
         // SSL
         if (isset($this->options['ssl'])) {
             $this
-                ->setCurlOptions(CURLOPT_SSL_VERIFYPEER, true)
-                ->setCurlOptions(CURLOPT_SSL_VERIFYHOST, 2)
-                ->setCurlOptions(CURLOPT_CAINFO, getcwd() . $this->options['ssl']);
+                ->setCurlOption(CURLOPT_SSL_VERIFYPEER, true)
+                ->setCurlOption(CURLOPT_SSL_VERIFYHOST, 2)
+                ->setCurlOption(CURLOPT_CAINFO, getcwd() . $this->options['ssl']);
         }
 
         // Payload
         if ((bool) $this->options['is_payload']) {
-            $this->options['request_headers'] = array_merge(
-                $contentLength = ((isset($this->options['data']))
-                    ? strlen(json_encode($this->options['data']))
-                    : 0);
+            $contentLength = ((isset($this->options['data']))
+                ? strlen(json_encode($this->options['data']))
+                : 0);
 
+            $this->options['request_headers'] = array_merge(
                 $this->options['request_headers'],
-                [
+                array(
                     'Content-Type: application/json',
                     'Content-Length: ' . $contentLength
-                ]
+                )
             );
         }
 
         // Set headers
         if (!empty($this->options['request_headers'])) {
-            $this->setCurlOptions(CURLOPT_HTTPHEADER, $this->options['request_headers']);
+            $this->setCurlOption(CURLOPT_HTTPHEADER, $this->options['request_headers']);
         }
 
         // Retrieving HTTP response body

@@ -32,7 +32,7 @@ class Post extends Http
      */
     public function prepare()
     {
-        $this->setCurlOptions(CURLOPT_CUSTOMREQUEST, 'POST');
+        $this->setCurlOption(CURLOPT_CUSTOMREQUEST, 'POST');
 
         if (isset($this->options['data'])) {
             $data = ((bool) $this->options['is_payload'])
@@ -40,8 +40,8 @@ class Post extends Http
                 : http_build_query($this->options['data']);
 
             $this
-                ->setCurlOptions(CURLOPT_POST, 1)
-                ->setCurlOptions(CURLOPT_POSTFIELDS, $data);
+                ->setCurlOption(CURLOPT_POST, 1)
+                ->setCurlOption(CURLOPT_POSTFIELDS, $data);
         }
     }
 }

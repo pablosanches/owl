@@ -33,6 +33,6 @@ class Options extends Http
     public function prepare()
     {
         $this
-            ->setCurlOptions(CURLOPT_CUSTOMREQUEST, 'OPTIONS');
+            ->setCurlOption(CURLOPT_CUSTOMREQUEST, 'OPTIONS');
     }
 }

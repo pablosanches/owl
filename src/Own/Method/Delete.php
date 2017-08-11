@@ -32,6 +32,6 @@ class Delete extends Http
      */
     public function prepare()
     {
-        $this->setCurlOptions(CURLOPT_CUSTOMREQUEST, 'DELETE');
+        $this->setCurlOption(CURLOPT_CUSTOMREQUEST, 'DELETE');
     }
 }

@@ -32,14 +32,14 @@ class Put extends Http
      */
     public function prepare()
     {
-        $this->setCurlOptions(CURLOPT_CUSTOMREQUEST, 'PUT');
+        $this->setCurlOption(CURLOPT_CUSTOMREQUEST, 'PUT');
 
         if (isset($this->options['data'])) {
             $data = ((bool) $this->options['is_payload'])
                 ? json_encode($this->options['data'])
                 : http_build_query($this->options['data']);
 
-            $this->setCurlOptions(CURLOPT_POSTFIELDS, $data);
+            $this->setCurlOption(CURLOPT_POSTFIELDS, $data);
         }
     }
 }

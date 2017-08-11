@@ -33,7 +33,7 @@ class Head extends Http
     public function prepare()
     {
         $this
-            ->setCurlOptions(CURLOPT_HEADER, true)
-            ->setCurlOptions(CURLOPT_CUSTOMREQUEST, 'HEAD');
+            ->setCurlOption(CURLOPT_HEADER, true)
+            ->setCurlOption(CURLOPT_CUSTOMREQUEST, 'HEAD');
     }
 }

@@ -1,16 +1,16 @@
 <?php
 
-namespace Own\Method;
+namespace Owl\Method;
 
-use Own\Http;
+use Owl\Http;
 
 /**
- * Http Options
+ * Http GET method
  *
  * @author Pablo Sanches <sanches.webmaster@gmail.com>
  * @license MIT
  */
-class Options extends Http
+class Get extends Http
 {
     /**
      * The construct
@@ -30,9 +30,5 @@ class Options extends Http
      *
      * @return void
      */
-    public function prepare()
-    {
-        $this
-            ->setCurlOption(CURLOPT_CUSTOMREQUEST, 'OPTIONS');
-    }
+    public function prepare() {}
 }

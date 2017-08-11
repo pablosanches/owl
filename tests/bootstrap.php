@@ -1,4 +1,4 @@
 <?php
 
 $loader = require __DIR__.'/../vendor/autoload.php';
-$loader->add('Own\Tests', __DIR__);
+$loader->add('Owl\Tests', __DIR__);

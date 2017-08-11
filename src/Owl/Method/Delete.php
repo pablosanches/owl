@@ -1,16 +1,16 @@
 <?php
 
-namespace Own\Method;
+namespace Owl\Method;
 
-use Own\Http;
+use Owl\Http;
 
 /**
- * Http Head
+ * Http DELETE method
  *
  * @author Pablo Sanches <sanches.webmaster@gmail.com>
  * @license MIT
  */
-class Head extends Http
+class Delete extends Http
 {
     /**
      * The construct
@@ -32,8 +32,6 @@ class Head extends Http
      */
     public function prepare()
     {
-        $this
-            ->setCurlOption(CURLOPT_HEADER, true)
-            ->setCurlOption(CURLOPT_CUSTOMREQUEST, 'HEAD');
+        $this->setCurlOption(CURLOPT_CUSTOMREQUEST, 'DELETE');
     }
 }

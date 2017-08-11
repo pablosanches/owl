@@ -1,8 +1,8 @@
 <?php
 
-namespace Own\Method;
+namespace Owl\Method;
 
-use Own\Http;
+use Owl\Http;
 
 /**
  * Http PUT method

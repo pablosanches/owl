@@ -1,16 +1,16 @@
 <?php
 
-namespace Own\Method;
+namespace Owl\Method;
 
-use Own\Http;
+use Owl\Http;
 
 /**
- * Http DELETE method
+ * Http Patch
  *
  * @author Pablo Sanches <sanches.webmaster@gmail.com>
  * @license MIT
  */
-class Delete extends Http
+class Patch extends Http
 {
     /**
      * The construct
@@ -32,6 +32,15 @@ class Delete extends Http
      */
     public function prepare()
     {
-        $this->setCurlOption(CURLOPT_CUSTOMREQUEST, 'DELETE');
+        $this
+            ->setCurlOption(CURLOPT_CUSTOMREQUEST, 'PATCH');
+
+        if (isset($this->options['data'])) {
+            $data = ((bool) $this->options['is_payload'])
+                ? json_encode($this->options['data'])
+                : http_build_query($this->options['data']);
+
+            $this->setCurlOption(CURLOPT_POSTFIELDS, $data);
+        }
     }
 }

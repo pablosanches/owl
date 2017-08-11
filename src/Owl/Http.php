@@ -1,6 +1,6 @@
 <?php
 
-namespace Own;
+namespace Owl;
 
 /**
  * Http abstract class

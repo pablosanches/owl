@@ -3,6 +3,7 @@
 Owl is a simply cURL wrapper for PHP
 
 [![Build Status](https://travis-ci.org/pablosanches/owl.svg?branch=master)](https://travis-ci.org/pablosanches/owl)
+[![CodeClimate](http://img.shields.io/codeclimate/github/pablosanches/owl.svg?style=flat)](https://codeclimate.com/github/pablosanches/owl)
 
 ## Requirements
 

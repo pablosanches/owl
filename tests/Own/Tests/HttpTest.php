@@ -1,8 +1,7 @@
 <?php
 namespace Own\Tests;
 
-use Own\Method\Post;
-use Own\Method\Get;
+use \Own\Method as Http;
 
 class HttpTest extends \PHPUnit_Framework_TestCase
 {
@@ -10,7 +9,7 @@ class HttpTest extends \PHPUnit_Framework_TestCase
 
     public function testOptionsGet()
     {
-        $request = new Post($this->endpoint, [
+        $request = new Http\Post($this->endpoint, [
             'data' => [
                 'name' => 'foo',
                 'email' => 'foo@domain.com'
@@ -34,7 +33,7 @@ class HttpTest extends \PHPUnit_Framework_TestCase
 
     public function testOptionsGetWithPayload()
     {
-        $request = new Post($this->endpoint, [
+        $request = new Http\Post($this->endpoint, [
             'data' => [
                 'name' => 'foo',
                 'email' => 'foo@domain.com'
@@ -58,7 +57,7 @@ class HttpTest extends \PHPUnit_Framework_TestCase
 
     public function testOptionsSet()
     {
-        $request = new Get($this->endpoint);
+        $request = new Http\Get($this->endpoint);
         $options = $request->getCurlOptions();
 
         $this->assertNull($options[27]);
@@ -71,7 +70,7 @@ class HttpTest extends \PHPUnit_Framework_TestCase
 
     public function testCurlInfoGet()
     {
-        $request = new Get($this->endpoint, [
+        $request = new Http\Get($this->endpoint, [
             'autoclose' => false
         ]);
 

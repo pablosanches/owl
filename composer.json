@@ -1,5 +1,5 @@
 {
-    "name": "pablosanches/own",
+    "name": "pablosanches/owl",
     "description": "Owl is a simply cURL wrapper for PHP",
     "type": "library",
     "keywords": ["curl", "http"],
